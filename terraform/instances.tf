@@ -1,5 +1,5 @@
 resource "aws_instance" "nat" {
-    ami = "ami-0669a96e355eac82f" # this is a special ami preconfigured to do NAT
+    ami = "ami-0669a96e355eac82f"
     availability_zone = "sa-east-1a"
     instance_type = "m1.small"
     key_name = "${var.aws_key_name}"
