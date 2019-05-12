@@ -10,3 +10,16 @@ resource "aws_eip" "nat" {
     instance = "${aws_instance.nat.id}"
     vpc = true
 }
+
+resource "aws_route_table" "eu-west-1a-public" {
+    vpc_id = "${aws_vpc.default.id}"
+
+    route {
+        cidr_block = "0.0.0.0/0"
+        gateway_id = "${aws_internet_gateway.default.id}"
+    }
+
+    tags {
+        Name = "Public Subnet"
+    }
+}
