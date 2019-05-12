@@ -41,3 +41,8 @@ resource "aws_route_table" "eu-west-1a-private" {
         Name = "Private Subnet"
     }
 }
+
+resource "aws_route_table_association" "eu-west-1a-private" {
+    subnet_id = "${aws_subnet.eu-west-1a-private.id}"
+    route_table_id = "${aws_route_table.eu-west-1a-private.id}"
+}
