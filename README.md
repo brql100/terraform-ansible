@@ -52,3 +52,13 @@ Now, we go into our NAT instance:
 ```
 ssh ec2-user@<NAT PUBLIC IP> -i ansible.pem
 ```
+
+For our ansible example, we are going to use the Wordpress-nginx [from the offical GitHub repo](https://github.com/ansible/ansible-examples/tree/master/wordpress-nginx).
+
+Download this file by using:
+
+```
+git clone https://github.com/ansible/ansible-examples/tree/master/wordpress-nginx.git
+cd wordpress-nginx
+```
+
