@@ -72,7 +72,7 @@ yum install ansible -y
 Now move the hosts file to /etc/ansible:
 
 ```
-mv hosts /etc/ansible
+mv hosts /etc/ansible/
 ```
 
 This hosts file looks like this:
@@ -86,3 +86,21 @@ This hosts file looks like this:
 ```
 
 Change it to use our private IP from the webserver/database instances.
+
+Now, move our key to your ~/.ssh folder:
+
+```
+mv ansible.pem ~/.ssh/
+```
+
+Now you may be able to ping your servers:
+
+```
+ansible -m ping all
+```
+
+If you got it right, just install wordpress:
+
+```
+ansible-playbook site.yml --key-file "~/.ssh/ansible.pem"
+```
