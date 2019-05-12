@@ -23,3 +23,8 @@ resource "aws_route_table" "eu-west-1a-public" {
         Name = "Public Subnet"
     }
 }
+
+resource "aws_route_table_association" "eu-west-1a-public" {
+    subnet_id = "${aws_subnet.eu-west-1a-public.id}"
+    route_table_id = "${aws_route_table.eu-west-1a-public.id}"
+}
