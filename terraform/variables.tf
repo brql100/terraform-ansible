@@ -1,14 +1,14 @@
 variable "aws_access_key" {
-
+    default = "ACCESS"
 }
 variable "aws_secret_key" {
-
+    default = "SECRET"
 }
 variable "aws_key_path" {
-
+    default = "/root/terraform-ansible/terraform"
 }
 variable "aws_key_name" {
-
+    default = "ansible.pem"
 }
 
 variable "aws_region" {
