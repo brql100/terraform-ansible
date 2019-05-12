@@ -1,2 +1,5 @@
-[wordpress-server]
-webserver2
+[webserver]
+<webserver-private-ip>
+
+[database]
+<database-private-ip>

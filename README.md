@@ -62,3 +62,27 @@ git clone https://github.com/ansible/ansible-examples/tree/master/wordpress-ngin
 cd wordpress-nginx
 ```
 
+Now we need to install Ansible:
+
+```
+sudo su - 
+yum install ansible -y
+```
+
+Now move the hosts file to /etc/ansible:
+
+```
+mv hosts /etc/ansible
+```
+
+This hosts file looks like this:
+
+```
+[webserver]
+<webserver-private-ip>
+
+[database]
+<database-private-ip>
+```
+
+Change it to use our private IP from the webserver/database instances.
