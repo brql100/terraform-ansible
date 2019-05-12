@@ -13,13 +13,13 @@ variable "aws_key_name" {
 
 variable "aws_region" {
     description = "EC2 Region for the VPC"
-    default = "eu-west-1" # usando EU para testes.
+    default = "sa-east-1"
 }
 
 variable "amis" {
     description = "AMIs by region"
     default = {
-        eu-west-1 = "ami-66506c1c"
+        sa-east-1 = "ami-66506c1c"
     }
 }
 
