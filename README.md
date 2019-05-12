@@ -7,6 +7,8 @@ Using Terraform and Ansible
 First of all, create an AWS user. Keep its *ACCESS_KEY* and *SECRET_ACCESS_KEY*.
 You will also need a key to connect in your instances.
 
+Remember that this key **must** be created in the same region you are creating your resources using terraform. And its permissions must be *0400*.
+
 Now, use the Vagrantfile to boot up a VM in order to install our stuff.
 
 ```
