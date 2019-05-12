@@ -8,7 +8,7 @@ variable "aws_key_path" {
     default = "/root/terraform-ansible/terraform"
 }
 variable "aws_key_name" {
-    default = "ansible.pem"
+    default = "ansible"
 }
 
 variable "aws_region" {
