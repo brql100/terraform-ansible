@@ -17,11 +17,11 @@ resource "aws_eip" "web-1" {
 }
 
 resource "aws_route_table" "eu-west-1a-public" {
-    vpc_id = "${aws_vpc.default.id}"
+    vpc_id = "${aws_vpc.main_vpc.id}"
 
     route {
         cidr_block = "0.0.0.0/0"
-        gateway_id = "${aws_internet_gateway.default.id}"
+        gateway_id = "${aws_internet_gateway.ig-main.id}"
     }
 
     tags {
@@ -35,7 +35,7 @@ resource "aws_route_table_association" "eu-west-1a-public" {
 }
 
 resource "aws_route_table" "eu-west-1a-private" {
-    vpc_id = "${aws_vpc.default.id}"
+    vpc_id = "${aws_vpc.main_vpc.id}"
 
     route {
         cidr_block = "0.0.0.0/0"
