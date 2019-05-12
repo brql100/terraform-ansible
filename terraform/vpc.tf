@@ -11,6 +11,11 @@ resource "aws_eip" "nat" {
     vpc = true
 }
 
+resource "aws_eip" "web-1" {
+    instance = "${aws_instance.web-1.id}"
+    vpc = true
+}
+
 resource "aws_route_table" "eu-west-1a-public" {
     vpc_id = "${aws_vpc.default.id}"
 
