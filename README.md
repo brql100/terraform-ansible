@@ -40,3 +40,15 @@ Now, we initiate our terraform folder:
 cd terraform/
 terraform init/
 ```
+
+And we create our infrastructure:
+
+```
+terraform apply
+```
+
+Now, we go into our NAT instance:
+
+```
+ssh ec2-user@<NAT PUBLIC IP> -i ansible.pem
+```
