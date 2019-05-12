@@ -8,3 +8,14 @@ resource "aws_subnet" "eu-west-1a-public" {
         Name = "Public Subnet"
     }
 }
+
+resource "aws_subnet" "eu-west-1a-private" {
+    vpc_id = "${aws_vpc.main_vpc.id}"
+
+    cidr_block = "${var.private_subnet_cidr}"
+    availability_zone = "eu-west-1a"
+
+    tags {
+        Name = "Private Subnet"
+    }
+}

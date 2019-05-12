@@ -28,3 +28,16 @@ resource "aws_route_table_association" "eu-west-1a-public" {
     subnet_id = "${aws_subnet.eu-west-1a-public.id}"
     route_table_id = "${aws_route_table.eu-west-1a-public.id}"
 }
+
+resource "aws_route_table" "eu-west-1a-private" {
+    vpc_id = "${aws_vpc.default.id}"
+
+    route {
+        cidr_block = "0.0.0.0/0"
+        instance_id = "${aws_instance.nat.id}"
+    }
+
+    tags {
+        Name = "Private Subnet"
+    }
+}
