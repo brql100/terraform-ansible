@@ -1,6 +1,6 @@
 resource "aws_security_group" "nat" {
     name = "vpc_nat"
-    description = "Allow traffic to pass from the private subnet to the internet"
+    description = "Can access both subnets"
 
     ingress {
         from_port = 80
